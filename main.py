@@ -47,7 +47,8 @@ def utility_processor():
 @app.route("/movie/<movie_id>")
 def movie_details(movie_id):
     details = tmdb_client.get_single_movie(movie_id)
-    cast = tmdb_client.get_single_movie_cast(movie_id)
+    cast_val = tmdb_client.get_single_movie_cast(movie_id)
+    cast = cast_val["cast"]
     movie_images = tmdb_client.get_movie_images(movie_id)
     backdrop = random.choice(movie_images['backdrops'])
     link = backdrop["file_path"]

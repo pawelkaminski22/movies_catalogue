@@ -62,7 +62,7 @@ def get_single_movie_cast(movie_id):
         "Authorization": f"Bearer {API_TOKEN}"
     }
     response = requests.get(endpoint, headers=headers)
-    return response.json()["cast"]
+    return response.json()
 
 
 def search(search_query):

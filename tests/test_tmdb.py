@@ -20,19 +20,19 @@ def test_get_movies_list(monkeypatch):
 def test_get_single_movie(monkeypatch):
     mock_movie = ['Movie 1']
     call_tmdb_api(monkeypatch, mock_movie)
-    movie = tmdb_client.get_movies_list('531219')
+    movie = tmdb_client.get_single_movie('531219')
     assert movie == mock_movie
 
 
 def test_get_movie_images(monkeypatch):
     mock_image = ['Image 1']
     call_tmdb_api(monkeypatch, mock_image)
-    image = tmdb_client.get_movies_list('531219')
+    image = tmdb_client.get_movie_images('531219')
     assert image == mock_image
 
 
 def test_get_single_movie_cast(monkeypatch):
-    mock_cast = ['cast 1']
+    mock_cast = ['cast']
     call_tmdb_api(monkeypatch, mock_cast)
-    cast = tmdb_client.get_movies_list('531219')
+    cast = tmdb_client.get_single_movie_cast('531219')
     assert cast == mock_cast
