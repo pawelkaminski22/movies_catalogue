@@ -22,10 +22,6 @@ def add_to_favorites():
 
 @app.route('/')
 def homepage():
-    # selected_list = request.args.get('list_type', "upcoming")
-    # movies = tmdb_client.get_movies(how_many=16, list_type=selected_list)
-    # list_of_lists = ['upcoming', 'top_rated', 'popular', 'now_playing']
-    # return render_template("homepage.html", movies=movies, current_list=list_of_lists)
     selected_list = request.args.get('list_type', "upcoming")
     movies = tmdb_client.get_movies(how_many=16, list_type=selected_list)
     buttons = [
@@ -35,7 +31,7 @@ def homepage():
         {'id': "now_playing",'name':'now playing', 'active':False}
     ]
     for butt in buttons:
-        if butt['id']==selected_list:
+        if butt['id'] == selected_list:
             butt['active']=True
 
     return render_template("homepage.html", movies=movies, buttons=buttons, list_type=selected_list)
