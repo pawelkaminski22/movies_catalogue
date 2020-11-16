@@ -1,7 +1,8 @@
 import requests
 from random import shuffle
+import os
 
-API_TOKEN = "eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI1M2I4YTdiYWVlNjA3MGZjNWY0NjQ2NTIwZTY0ZjQ4NSIsInN1YiI6IjVmODQ2NzBiYTFhOWJhMDAzNzNmY2YzYiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.PegfZ3A4hvPYUuVfL9_C4oSQguR1LnfiNvJCDkt5N4w"
+API_TOKEN = os.environ.get("TMDB_API_TOKEN", "")
 
 
 def get_popular_movies():
