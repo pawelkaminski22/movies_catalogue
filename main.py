@@ -22,7 +22,7 @@ def add_to_favorites():
 
 @app.route('/')
 def homepage():
-    selected_list = request.args.get('list_type', "upcoming")
+    selected_list = request.args.get('list_type', "popular")
     movies = tmdb_client.get_movies(how_many=16, list_type=selected_list)
     buttons = [
         {'id': "upcoming",'name':'upcoming', 'active':False},
